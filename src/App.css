@@ -37,13 +37,19 @@
   }
 }
 
-.category-buttons button {
+.category-buttons li {
   background-color: rgb(12, 204, 82);
   color: white;
   font-style: italic, bold;
-  padding: 10px;
+  padding: 0px;
   margin: 20px;
 }
+
+NavLink {
+  background-color:  rgb(12, 204, 82);;
+}
+
+
 
 .main-content {
   font-style: italic;

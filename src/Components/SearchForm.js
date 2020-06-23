@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+//import { NavLink } from 'react-router-dom';
 
-export default class SearchForm extends Component {
+class SearchForm extends Component {
 
     state = {
         searchText: ''
@@ -13,7 +14,10 @@ export default class SearchForm extends Component {
       handleSubmit = e => {
         e.preventDefault();
         if ( this.query.value) {
-          this.props.onSearch(this.query.value);
+          let topic = this.query.value;
+          let path = `/${topic}`;
+          this.props.onSearch(topic);
+          this.props.history.push(path);
         }
         e.currentTarget.reset();
       }
@@ -31,8 +35,11 @@ export default class SearchForm extends Component {
               <img src="https://www.clipartmax.com/png/middle/279-2795130_search-magnifying-glass-search-icon-transparent.png" 
               className="search-img" alt=""></img>
             </button>
-          </form>      
+          </form>
+          
         );
       
       }
 }
+
+export default SearchForm;
